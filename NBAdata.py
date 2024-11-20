@@ -44,13 +44,34 @@ def average_points_season(gamelog, season):
     average = total_points / total_games if total_games > 0 else 0
     return average
 
+def average_rebounds_season(gamelog, season):
+    total_rebounds = 0
+    total_games = 0
+    for _, game in gamelog.iterrows():
+        if game['MIN'] > 0 and game['SEASON_ID'].endswith(season):
+            total_games += 1
+            total_rebounds += game['REB']
+    average = total_rebounds / total_games if total_games > 0 else 0
+    return average
 
-player = player_id('Stephen Curry')
+def average_assists_season(gamelog, season):
+    total_assists = 0
+    total_games = 0
+    for _, game in gamelog.iterrows():
+        if game['MIN'] > 0 and game['SEASON_ID'].endswith(season):
+            total_games += 1
+            total_assists += game['AST']
+    average = total_assists / total_games if total_games > 0 else 0
+    return average
+
+
+player = player_id('LeBron James')
 player_gamelog = player_gamelog(player)
-average_all = average_points_all(player_gamelog)
-average_season = average_points_season(player_gamelog, '22024')
-
-
+average_pts_all = average_points_all(player_gamelog)
+average_pts_season = average_points_season(player_gamelog, '22024')
+average_reb_season = average_rebounds_season(player_gamelog, '22024')
+average_ast_season = average_assists_season(player_gamelog, '22024')
+    
 
 
 
