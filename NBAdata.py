@@ -65,17 +65,15 @@ def average_assists_season(gamelog, season):
     return average
 
 
+
 player = player_id('LeBron James')
 player_gamelog = player_gamelog(player)
 average_pts_all = average_points_all(player_gamelog)
 average_pts_season = average_points_season(player_gamelog, '22024')
 average_reb_season = average_rebounds_season(player_gamelog, '22024')
 average_ast_season = average_assists_season(player_gamelog, '22024')
-    
 
 
 
 
-
-
-
+dslkafj;dslkfj
